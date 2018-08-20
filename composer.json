@@ -1,0 +1,17 @@
+{ "autoload": {
+    "psr-4": {
+        "App\\": "app/"
+    },
+    "classmap":[
+      "./core"
+    ],
+    "files":[
+      "core/helpers.php"
+    ]
+  },
+  "require": {
+    "symfony/var-dumper": "^4.1",
+    "adbario/php-dot-notation": "^2.0",
+        "dmitrymomot/php-session": "^1.0"
+  }
+}
