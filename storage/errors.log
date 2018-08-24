@@ -1,0 +1,48 @@
+App\Exceptions\ObserverContractException: Class must be instance of ObserverInterface in /var/www/framework/app/traits/Observerable.php:32
+Stack trace:
+#0 /var/www/framework/app/traits/Observerable.php(25): App\middleware\Middleware->observerHandler()
+#1 /var/www/framework/app/middleware/Middleware.php(31): App\middleware\Middleware->fire(Array)
+#2 /var/www/framework/app/Facades/Facade.php(20): App\middleware\Middleware->before(Object(App\controllers\pagesController), 'index')
+#3 /var/www/framework/app/controllers/ControllerDispatcher.php(12): App\Facades\Facade::__callStatic('before', Array)
+#4 /var/www/framework/core/routing/Route.php(55): App\controllers\ControllerDispatcher->dispatch(Object(App\controllers\pagesController), 'index')
+#5 /var/www/framework/core/routing/Route.php(50): Route->dispatchController()
+#6 /var/www/framework/core/routing/Route.php(29): Route->runController()
+#7 /var/www/framework/core/routing/Router.php(36): Route->run()
+#8 /var/www/framework/app/App.php(28): Router->direct()
+#9 /var/www/framework/core/bootstrap.php(7): App\App->run()
+#10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#11 {main}App\Exceptions\ObserverContractException: Class must be instance of ObserverInterface in /var/www/framework/app/traits/Observerable.php:32
+Stack trace:
+#0 /var/www/framework/app/traits/Observerable.php(25): App\middleware\Middleware->observerHandler()
+#1 /var/www/framework/app/middleware/Middleware.php(31): App\middleware\Middleware->fire(Array)
+#2 /var/www/framework/app/Facades/Facade.php(20): App\middleware\Middleware->before(Object(App\controllers\pagesController), 'index')
+#3 /var/www/framework/app/controllers/ControllerDispatcher.php(12): App\Facades\Facade::__callStatic('before', Array)
+#4 /var/www/framework/core/routing/Route.php(55): App\controllers\ControllerDispatcher->dispatch(Object(App\controllers\pagesController), 'index')
+#5 /var/www/framework/core/routing/Route.php(50): Route->dispatchController()
+#6 /var/www/framework/core/routing/Route.php(29): Route->runController()
+#7 /var/www/framework/core/routing/Router.php(36): Route->run()
+#8 /var/www/framework/app/App.php(28): Router->direct()
+#9 /var/www/framework/core/bootstrap.php(7): App\App->run()
+#10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#11 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/bootstrap.php(5): App\Container::get('sdds')
+#1 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#2 {main}App\Exceptions\ObserverContractException: Class must be instance of ObserverInterface in /var/www/framework/app/traits/Observerable.php:32
+Stack trace:
+#0 /var/www/framework/app/traits/Observerable.php(25): App\middleware\Middleware->observerHandler()
+#1 /var/www/framework/app/middleware/Middleware.php(31): App\middleware\Middleware->fire(Array)
+#2 /var/www/framework/app/Facades/Facade.php(20): App\middleware\Middleware->before(Object(App\controllers\pagesController), 'index')
+#3 /var/www/framework/app/controllers/ControllerDispatcher.php(12): App\Facades\Facade::__callStatic('before', Array)
+#4 /var/www/framework/core/routing/Route.php(55): App\controllers\ControllerDispatcher->dispatch(Object(App\controllers\pagesController), 'index')
+#5 /var/www/framework/core/routing/Route.php(50): Route->dispatchController()
+#6 /var/www/framework/core/routing/Route.php(29): Route->runController()
+#7 /var/www/framework/core/routing/Router.php(36): Route->run()
+#8 /var/www/framework/app/App.php(28): Router->direct()
+#9 /var/www/framework/core/bootstrap.php(7): App\App->run()
+#10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#11 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/bootstrap.php(8): App\Container::get('sdds')
+#1 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#2 {main}

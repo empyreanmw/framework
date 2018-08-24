@@ -29,7 +29,7 @@ trait Observerable
     {
         foreach ($this->observers as $observer) {
             if (!$this->followsContract($observer)) {
-                throw new ObserverContractException("Class must be instance of ObserverInterface");
+                throw new ObserverContractException();
             }
 
             $observer->handle();

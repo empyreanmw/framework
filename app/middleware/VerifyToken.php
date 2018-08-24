@@ -24,7 +24,7 @@ class VerifyToken
     {
         if ($this->request->isPost()) {
             if(request()->input('token') !== Token::get()) {
-                throw new TokenMissmatchException('Token missmatch!');
+                throw new TokenMissmatchException();
             }
         }
     }

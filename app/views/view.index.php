@@ -14,7 +14,6 @@ Titula
         <input type="text" name="lastname">
         <input type="text" name="email">
         <?php echo token(); ?>
-        <?php dump($errors); ?>
         <button type="submit">Submit</button>
     </form>
 
