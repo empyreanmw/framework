@@ -12,6 +12,8 @@
   "require": {
     "symfony/var-dumper": "^4.1",
     "adbario/php-dot-notation": "^2.0",
-        "dmitrymomot/php-session": "^1.0"
+        "dmitrymomot/php-session": "^1.0",
+        "symfony/finder": "^4.1",
+        "symfony/console": "^4.1"
   }
 }

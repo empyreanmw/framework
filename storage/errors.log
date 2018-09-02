@@ -45,4 +45,141 @@ Stack trace:
 Stack trace:
 #0 /var/www/framework/core/bootstrap.php(8): App\Container::get('sdds')
 #1 /var/www/framework/index.php(6): require_once('/var/www/framew...')
-#2 {main}
+#2 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/bootstrap.php(10): App\Container::get('mig')
+#1 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#2 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/app/commands/MigrationCommand.php(24): config('Database.userna...')
+#2 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#7 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/app/commands/MigrationCommand.php(24): config('Database.userna...')
+#2 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#7 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/app/commands/MigrationCommand.php(23): config('Database.name')
+#2 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#7 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/app/commands/MigrationCommand.php(23): config('Database')
+#2 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#7 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/app/commands/MigrationCommand.php(23): config('Database.name')
+#2 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#7 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/app/commands/MigrationCommand.php(23): config('Middleware.User')
+#2 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#7 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/core/database/Migrations.php(34): config('Database.userna...')
+#2 /var/www/framework/core/database/Migrations.php(17): core\database\Migrations->setSql()
+#3 /var/www/framework/app/AutoDependencyInjection.php(16): core\database\Migrations->__construct()
+#4 /var/www/framework/app/Container.php(18): App\AutoDependencyInjection->create('core\\database\\M...')
+#5 /var/www/framework/app/Facades/Facade.php(13): App\Container::make('core\\database\\M...')
+#6 /var/www/framework/app/Facades/Facade.php(18): App\Facades\Facade::getInstance()
+#7 /var/www/framework/app/commands/MigrationCommand.php(23): App\Facades\Facade::__callStatic('execute', Array)
+#8 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#13 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/core/database/Migrations.php(35): config('Database.userna...')
+#2 /var/www/framework/core/database/Migrations.php(17): core\database\Migrations->setSql()
+#3 /var/www/framework/app/AutoDependencyInjection.php(16): core\database\Migrations->__construct()
+#4 /var/www/framework/app/Container.php(18): App\AutoDependencyInjection->create('core\\database\\M...')
+#5 /var/www/framework/app/Facades/Facade.php(13): App\Container::make('core\\database\\M...')
+#6 /var/www/framework/app/Facades/Facade.php(18): App\Facades\Facade::getInstance()
+#7 /var/www/framework/app/commands/MigrationCommand.php(23): App\Facades\Facade::__callStatic('execute', Array)
+#8 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#13 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/core/database/Migrations.php(35): config('Database.userna...')
+#2 /var/www/framework/core/database/Migrations.php(17): core\database\Migrations->setSql()
+#3 /var/www/framework/app/AutoDependencyInjection.php(16): core\database\Migrations->__construct()
+#4 /var/www/framework/app/Container.php(18): App\AutoDependencyInjection->create('core\\database\\M...')
+#5 /var/www/framework/app/Facades/Facade.php(13): App\Container::make('core\\database\\M...')
+#6 /var/www/framework/app/Facades/Facade.php(18): App\Facades\Facade::getInstance()
+#7 /var/www/framework/app/commands/MigrationCommand.php(23): App\Facades\Facade::__callStatic('execute', Array)
+#8 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#13 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/helpers.php(7): App\Container::get('config')
+#1 /var/www/framework/core/database/Migrations.php(18): config('Database.name')
+#2 /var/www/framework/app/AutoDependencyInjection.php(16): core\database\Migrations->__construct()
+#3 /var/www/framework/app/Container.php(18): App\AutoDependencyInjection->create('core\\database\\M...')
+#4 /var/www/framework/app/Facades/Facade.php(13): App\Container::make('core\\database\\M...')
+#5 /var/www/framework/app/Facades/Facade.php(18): App\Facades\Facade::getInstance()
+#6 /var/www/framework/app/commands/MigrationCommand.php(23): App\Facades\Facade::__callStatic('execute', Array)
+#7 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#12 {main}App\Exceptions\ContainerResolveException: Could not resolve key in container in /var/www/framework/app/traits/Containerable.php:13
+Stack trace:
+#0 /var/www/framework/core/database/QueryBuilder.php(14): App\Container::get('db')
+#1 /var/www/framework/app/AutoDependencyInjection.php(16): core\database\QueryBuilder->__construct()
+#2 /var/www/framework/app/Container.php(18): App\AutoDependencyInjection->create('core\\database\\Q...')
+#3 /var/www/framework/app/Facades/Facade.php(13): App\Container::make('core\\database\\Q...')
+#4 /var/www/framework/app/Facades/Facade.php(18): App\Facades\Facade::getInstance()
+#5 /var/www/framework/core/database/SQLBuilder.php(29): App\Facades\Facade::__callStatic('tableExists', Array)
+#6 /var/www/framework/core/database/SQLBuilder.php(24): core\database\SQLBuilder->appendSqlToFile(Object(core\database\Blueprint))
+#7 /var/www/framework/app/Facades/Facade.php(20): core\database\SQLBuilder->create(Object(core\database\Blueprint))
+#8 /var/www/framework/core/database/migrations/create_user_table.php(25): App\Facades\Facade::__callStatic('create', Array)
+#9 /var/www/framework/core/database/MigrationHandler.php(29): core\database\migrations\create_user_table->up()
+#10 /var/www/framework/core/database/Migrations.php(24): core\database\MigrationHandler->run()
+#11 /var/www/framework/app/Facades/Facade.php(20): core\database\Migrations->Execute()
+#12 /var/www/framework/app/commands/MigrationCommand.php(23): App\Facades\Facade::__callStatic('execute', Array)
+#13 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\MigrationCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\MigrationCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /var/www/framework/framework(11): Symfony\Component\Console\Application->run()
+#18 {main}

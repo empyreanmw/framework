@@ -9,7 +9,7 @@ trait Containerable
 
     public static function get($key)
     {
-        if (!self::inContainer($key)) {
+            if (!self::inContainer($key)) {
             throw new ContainerResolveException();
         }
 

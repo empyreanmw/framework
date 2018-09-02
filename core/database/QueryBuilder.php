@@ -81,4 +81,23 @@ class QueryBuilder
         return $statemenet->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function tableExists($table)
+    {
+        $sql = "SELECT table_name FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'framework' AND TABLE_NAME = '$table'";
+
+        $statement = $this->db->prepare($sql);
+
+        $statement->execute();
+
+        if (!! $statement->rowCount()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function dropAllTables()
+    {
+
+    }
 }
