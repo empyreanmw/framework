@@ -3,16 +3,18 @@
 
 namespace App\validation\rules;
 
-class Required
+
+class Email
 {
     use TriesToPassARule;
 
     protected function rule()
     {
-        return $this->value == "";
+        return !filter_var($this->value, FILTER_VALIDATE_EMAIL);
     }
+
     protected function setMessage()
     {
-        $this->message =  $this->field. ' is required!';
+        $this->message = "You must provide a correct email address!";
     }
 }

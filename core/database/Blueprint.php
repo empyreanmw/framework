@@ -16,7 +16,7 @@ class Blueprint
 
     public function string($name)
     {
-       $this->attributes[] = [$name, 'varchar(35)'];
+       $this->attributes[] = [$name, 'varchar(60)'];
 
        return $this;
     }

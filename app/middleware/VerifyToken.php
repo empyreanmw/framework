@@ -26,6 +26,8 @@ class VerifyToken
             if(request()->input('token') !== Token::get()) {
                 throw new TokenMissmatchException();
             }
+
+            unset($_POST['token']); //removes token index from the $_POST case we dont need it anymore
         }
     }
 }

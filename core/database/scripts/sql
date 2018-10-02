@@ -1,0 +1,1 @@
+create table users (id int(50) primary key auto_increment ,username varchar(60) ,password varchar(60) ,email varchar(60) default "test" );

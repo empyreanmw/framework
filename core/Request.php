@@ -1,6 +1,7 @@
 <?php
 
 use App\validation\Validator;
+use App\Facades\Hash;
 
 class Request
 {
@@ -16,7 +17,7 @@ class Request
         return $_SERVER['REQUEST_METHOD'];
     }
 
-    public static function input($field = null)
+    public function input($field = null)
     {
         if ($field) {
             return $_POST[$field];
@@ -33,5 +34,12 @@ class Request
     public function isPost()
     {
         return $_SERVER['REQUEST_METHOD'] == "POST" ? true : false;
+    }
+
+    public function hashPassword()
+    {
+        if (array_key_exists('password', $_POST)) {
+           $_POST['password'] = Hash::make($_POST['password']);
+        }
     }
 }

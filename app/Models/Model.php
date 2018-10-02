@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App;
+namespace App\Models;
 
 use App\Facades\QueryBuilder;
 
@@ -61,5 +61,17 @@ class Model
     public function all()
     {
         return QueryBuilder::all($this->table);
+    }
+
+    public function exists($table, $value, $column)
+    {
+        return QueryBuilder::exists($table, $value, $column);
+    }
+
+    public function search($value, $column)
+    {
+        $this->setAttributes(QueryBuilder::search($this->table, $value, $column));
+
+        return $this;
     }
 }

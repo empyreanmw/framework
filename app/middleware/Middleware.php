@@ -8,10 +8,8 @@ use App\Facades\UserMiddleware;
 use App\observers\Logger;
 use App\traits\Observerable;
 
-class Middleware implements SubjectInterface
+class Middleware
 {
-    use Observerable;
-
     protected $beforeMiddleware = [];
     protected $userMiddleware = [];
     protected $afterMiddleware = [];
@@ -28,7 +26,6 @@ class Middleware implements SubjectInterface
     {
         $this->beforeMiddleware();
         UserMiddleware::handle($controller, $method);
-        $this->fire([new Logger]);
     }
 
     protected function beforeMiddleware()

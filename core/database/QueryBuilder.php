@@ -31,6 +31,30 @@ class QueryBuilder
 
     }
 
+    public function exists($table, $value, $column)
+    {
+       $sql = "select {$column} from {$table} WHERE {$column} = :{$column}";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(':' . $column, $value);
+        $statement->execute();
+
+        if (!! $statement->rowCount()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function search($table, $value, $column)
+    {
+        $sql = "select * from {$table} WHERE {$column} = :{$column}";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(':' . $column, $value);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function delete($table, $parameters)
     {
         $sql = 'DELETE from '.$table.' WHERE id=:id';
@@ -50,7 +74,6 @@ class QueryBuilder
 
     public function update($table, $parameters)
     {
-        dump($this->createQuery($parameters));
         $sql = 'UPDATE '.$table.' SET '.$this->createQuery($parameters).' WHERE id=:id';
         $statement = $this->db->prepare($sql);
 
@@ -94,10 +117,5 @@ class QueryBuilder
         }
 
         return false;
-    }
-
-    public function dropAllTables()
-    {
-
     }
 }

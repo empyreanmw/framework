@@ -19,7 +19,8 @@ class create_user_table
     {
         $this->blueprint->table('users');
         $this->blueprint->integer('id')->primary()->increment();
-        $this->blueprint->string('firstname');
+        $this->blueprint->string('username');
+        $this->blueprint->string('password');
         $this->blueprint->string('email')->default('test');
 
         SQLBuilder::create($this->blueprint);

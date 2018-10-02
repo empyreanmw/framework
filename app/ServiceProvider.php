@@ -23,9 +23,5 @@ class ServiceProvider
           return  2+2;
         });
         View::share('errors', SessionReader::get(['ValidationErrors']));
-        View::share('guests', function(){
-            $guests = new Guest();
-            return $guests->all();
-        });
     }
 }
