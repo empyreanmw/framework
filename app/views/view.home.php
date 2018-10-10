@@ -7,7 +7,6 @@ include __DIR__ . '/header.php';
 
     <div class="top-right links">
         <a href="home">Home</a>
-        <a href="users/list">List all users</a>
         <a href="logout">Logout</a>
     </div>
     <?php } ?>

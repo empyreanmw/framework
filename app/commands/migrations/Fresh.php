@@ -3,7 +3,7 @@
 namespace App\commands\migrations;
 
 use App\Facades\Migrations;
-use App\ShellExec;
+use core\database\Connection;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -19,10 +19,10 @@ class Fresh extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        ShellExec::MySQL('/var/www/framework/core/database/scripts/drop_all_tables');
+        Connection::instance()->getDriver()->executeSQL('/var/www/framework/core/database/scripts/drop_all_tables');
 
         Migrations::execute();
 
-        ShellExec::MySQL('/var/www/framework/core/database/scripts/sql');
+        Connection::instance()->getDriver()->executeSQL('/var/www/framework/core/database/scripts/sql');
     }
 }

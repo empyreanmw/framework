@@ -8,6 +8,11 @@ use App\View;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Guest');
+    }
+
     public function index()
     {
         return View::get('login');

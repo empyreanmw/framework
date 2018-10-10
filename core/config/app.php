@@ -1,14 +1,11 @@
 <?php
 return [
-    'Database' => [
-            'connection' => 'mysql:host=localhost',
-            'name' => 'framework',
-            'username' => 'root',
-            'password' => 'secret',
-        ],
+    'Connection' => 'sqlite',
     'Middleware' => [
             'User' => [
-                'Test' => App\middleware\TestMiddleware::class
+                'Test' => App\middleware\TestMiddleware::class,
+                'Auth' => App\middleware\AuthMiddleware::class,
+                'Guest' => App\middleware\GuestMiddleware::class
             ],
             'Before' => [
                  App\middleware\AnotherTestMiddleware::class,

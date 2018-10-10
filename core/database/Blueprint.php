@@ -23,7 +23,7 @@ class Blueprint
 
     public function integer($name)
     {
-        $this->attributes[] = [$name, 'int(50)'];
+        $this->attributes[] = [$name, 'INTEGER'];
 
         return $this;
     }
@@ -44,7 +44,7 @@ class Blueprint
 
     public function increment()
     {
-        $this->addOptionToAttribute('auto_increment');
+        $this->addOptionToAttribute('AUTOINCREMENT');
 
         return $this;
     }

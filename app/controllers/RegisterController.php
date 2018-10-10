@@ -7,6 +7,11 @@ use App\View;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Guest');
+    }
+
     public function index()
     {
         View::get('register');

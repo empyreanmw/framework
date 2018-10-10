@@ -1,7 +1,6 @@
 <?php
 namespace core\database;
 
-use App\App;
 
 class QueryBuilder
 {
@@ -11,7 +10,8 @@ class QueryBuilder
      */
     public function __construct()
     {
-        $this->db = App::get('db');
+        $this->db = Connection::instance()->getConnection();
+        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
     }
 
     public function insert($table, $parameters)
@@ -33,6 +33,7 @@ class QueryBuilder
 
     public function exists($table, $value, $column)
     {
+        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
        $sql = "select {$column} from {$table} WHERE {$column} = :{$column}";
         $statement = $this->db->prepare($sql);
         $statement->bindParam(':' . $column, $value);
@@ -106,15 +107,14 @@ class QueryBuilder
 
     public function tableExists($table)
     {
-        $sql = "SELECT table_name FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'framework' AND TABLE_NAME = '$table'";
-
+/*        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+        $sql = "SELECT 1 FROM '$table'";
         $statement = $this->db->prepare($sql);
-
         $statement->execute();
 
         if (!! $statement->rowCount()) {
             return true;
-        }
+        }*/
 
         return false;
     }

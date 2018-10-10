@@ -4,7 +4,8 @@
 namespace App\commands\migrations;
 
 use App\Facades\Migrations;
-use App\ShellExec;
+use App\ShellCommands;
+use core\database\Connection;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -22,6 +23,6 @@ class Migrate extends Command
     {
         Migrations::execute();
 
-        ShellExec::MySQL('/var/www/framework/core/database/scripts/sql');
+        Connection::instance()->getDriver()->executeSQL('/var/www/framework/core/database/scripts/sql');
     }
 }
