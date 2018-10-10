@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+app()->bootProvider();
+core\database\Connection::instance()->make();
+$app = new \Symfony\Component\Console\Application();
+
+$app->add(new \App\commands\migrations\Migrate());
+$app->add(new \App\commands\migrations\Fresh());
+
+$app->run();

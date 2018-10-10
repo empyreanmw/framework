@@ -1,20 +1,30 @@
 <?php
+
 namespace core\database;
+
+use App\traits\Singleton;
 
 class Connection
 {
+    use Singleton;
+
+    protected static $driver;
+    protected static $connection;
+
     public static function make()
     {
-        $database = config('Database');
+        self::$driver = (new ConnectionFactory())->build();
 
-        try {
-                $conn = new \PDO("{$database['connection']};dbname={$database['name']}", $database['username'], $database['password']);
-            }
-        catch(\PDOException $e)
-            {
-                 echo "Connection failed";
-            }
+        self::$connection = (self::$driver)->connect();
+    }
 
-            return $conn;
+    public function getDriver()
+    {
+        return self::$driver;
+    }
+
+    public function getConnection()
+    {
+        return self::$connection;
     }
 }

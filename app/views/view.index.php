@@ -59,10 +59,14 @@
 </head>
 <body>
 
-    <div class="content">
-        <div class="title m-b-md">
-            Framework
-        </div>
+    <h1>Index page</h1>
+    <form action="guests" method="POST">
+    <input type="text" name="firstname">
+        <input type="text" name="lastname">
+        <input type="text" name="email">
+        <?php echo token(); ?>
+        <button type="submit">Submit</button>
+    </form>
 
         <div class="links">
             <a href="https://github.com/empyreanmw/framework">GitHub</a>

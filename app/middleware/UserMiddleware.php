@@ -26,8 +26,12 @@ class UserMiddleware extends Middleware
                 if (isset($m['options']['only'][0]) && $m['options']['only'][0] == $method) {
                     array_push($this->allowedMiddleware, $m['middleware']);
                 }
+                else{
+                    array_push($this->allowedMiddleware, $m['middleware']);
+                }
             }
         }
+
         return $this;
     }
 

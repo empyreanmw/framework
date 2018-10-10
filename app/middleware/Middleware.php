@@ -2,8 +2,11 @@
 
 
 namespace App\middleware;
-use App\Facades\UserMiddleware;
 
+use App\contracts\SubjectInterface;
+use App\Facades\UserMiddleware;
+use App\observers\Logger;
+use App\traits\Observerable;
 
 class Middleware
 {
@@ -22,7 +25,6 @@ class Middleware
     public function before($controller, $method)
     {
         $this->beforeMiddleware();
-
         UserMiddleware::handle($controller, $method);
     }
 

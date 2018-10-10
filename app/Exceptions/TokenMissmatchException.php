@@ -4,7 +4,7 @@
 namespace App\Exceptions;
 
 
-class TokenMissmatchException extends \Exception
+class TokenMissmatchException extends LoggableException
 {
-
+    public $message = "Token missmatch";
 }

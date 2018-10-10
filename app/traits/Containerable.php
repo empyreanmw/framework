@@ -9,8 +9,8 @@ trait Containerable
 
     public static function get($key)
     {
-        if (!self::inContainer($key)) {
-            throw new ContainerResolveException("Could not resolve {$key} in container - ".self::class);
+            if (!self::inContainer($key)) {
+            throw new ContainerResolveException();
         }
 
         return self::$container[$key];

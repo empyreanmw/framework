@@ -2,6 +2,8 @@
 
 namespace App;
 
+use core\database\Connection;
+
 class App extends Container
 {
     protected $serviceProvider;
@@ -24,19 +26,23 @@ class App extends Container
     public function run()
     {
         $this->setMode()
+             ->makeConnection()
              ->make('router')
              ->direct();
     }
 
     protected function setMode()
     {
-        $this->debug = config('debug');
-
-        if ($this->debug) {
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
-        }
+
+        return $this;
+    }
+
+    protected function makeConnection()
+    {
+        Connection::make();
 
         return $this;
     }

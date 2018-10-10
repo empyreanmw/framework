@@ -26,3 +26,13 @@ function app()
 {
     return new App(new \App\ServiceProvider());
 }
+
+function auth()
+{
+    return App::make('App\\Auth\\Auth');
+}
+
+function session()
+{
+    return \Session\Session::instance();
+}

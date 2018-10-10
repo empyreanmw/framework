@@ -1,7 +1,6 @@
 <?php
 namespace core\database;
 
-use App\App;
 
 class QueryBuilder
 {
@@ -11,7 +10,8 @@ class QueryBuilder
      */
     public function __construct()
     {
-        $this->db = App::get('db');
+        $this->db = Connection::instance()->getConnection();
+        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
     }
 
     public function insert($table, $parameters)
@@ -29,6 +29,31 @@ class QueryBuilder
 
         return $this->db;
 
+    }
+
+    public function exists($table, $value, $column)
+    {
+        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+       $sql = "select {$column} from {$table} WHERE {$column} = :{$column}";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(':' . $column, $value);
+        $statement->execute();
+
+        if (!! $statement->rowCount()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function search($table, $value, $column)
+    {
+        $sql = "select * from {$table} WHERE {$column} = :{$column}";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(':' . $column, $value);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
     public function delete($table, $parameters)
@@ -50,7 +75,6 @@ class QueryBuilder
 
     public function update($table, $parameters)
     {
-        dump($this->createQuery($parameters));
         $sql = 'UPDATE '.$table.' SET '.$this->createQuery($parameters).' WHERE id=:id';
         $statement = $this->db->prepare($sql);
 
@@ -81,4 +105,17 @@ class QueryBuilder
         return $statemenet->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function tableExists($table)
+    {
+/*        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+        $sql = "SELECT 1 FROM '$table'";
+        $statement = $this->db->prepare($sql);
+        $statement->execute();
+
+        if (!! $statement->rowCount()) {
+            return true;
+        }*/
+
+        return false;
+    }
 }

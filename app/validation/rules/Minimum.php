@@ -14,6 +14,6 @@ class Minimum
 
     protected function setMessage()
     {
-        $this->message = [$this->field => $this->field. ' must be at least '.$this->options.' characters long'];
+        $this->message = $this->field. ' must be at least '.$this->options.' characters long!';
     }
 }

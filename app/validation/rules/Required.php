@@ -13,6 +13,6 @@ class Required
     }
     protected function setMessage()
     {
-        $this->message =[$this->field => $this->field. ' is required'];
+        $this->message =  $this->field. ' is required!';
     }
 }
