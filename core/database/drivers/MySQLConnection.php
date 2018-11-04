@@ -7,14 +7,12 @@ use App\contracts\ConnectionDriverInterface;
 use App\shell\MySQLScript;
 use App\Facades\ShellCommands;
 
-class MySQLConnection implements ConnectionDriverInterface
+class MySQLConnection
 {
-    public function connect()
+    public function connect($connectionInfo)
     {
-        $database = Config::grab('database')->get('connections.mysql');
-
         try {
-            $conn = new \PDO("{$database['host']};dbname={$database['name']}", $database['username'], $database['password']);
+            $conn = new \PDO("{$connectionInfo['host']};dbname={$connectionInfo['name']}", $connectionInfo['username'], $connectionInfo['password']);
         }
         catch(\PDOException $e)
         {
@@ -22,10 +20,5 @@ class MySQLConnection implements ConnectionDriverInterface
         }
 
         return $conn;
-    }
-
-    public function executeSQL($file)
-    {
-        ShellCommands::execute(new MySQLScript(), $file);
     }
 }

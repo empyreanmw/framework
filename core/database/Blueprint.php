@@ -37,14 +37,14 @@ class Blueprint
 
     public function default($value)
     {
-        $this->addOptionToAttribute('default "' . $value . '"');
+        $this->addOptionToAttribute("default '".$value. "'");
 
         return $this;
     }
 
     public function increment()
     {
-        $this->addOptionToAttribute('AUTOINCREMENT');
+        $this->addOptionToAttribute('generated always as identity');
 
         return $this;
     }

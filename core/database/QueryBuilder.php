@@ -4,14 +4,14 @@ namespace core\database;
 
 class QueryBuilder
 {
-    protected $db;
+    protected $pdo;
     /**
      * QueryBuilder constructor.
      */
     public function __construct()
     {
-        $this->db = Connection::instance()->getConnection();
-        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+        $this->pdo = (new Connection())->make();
+        $this->pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
     }
 
     public function insert($table, $parameters)
@@ -23,19 +23,19 @@ class QueryBuilder
             ':' . implode(', :', array_keys($parameters))
         );
 
-        $statement = $this->db->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
 
         $statement->execute($parameters);
 
-        return $this->db;
+        return $this->pdo;
 
     }
 
     public function exists($table, $value, $column)
     {
-        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+        $this->pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
        $sql = "select {$column} from {$table} WHERE {$column} = :{$column}";
-        $statement = $this->db->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
         $statement->bindParam(':' . $column, $value);
         $statement->execute();
 
@@ -49,7 +49,7 @@ class QueryBuilder
     public function search($table, $value, $column)
     {
         $sql = "select * from {$table} WHERE {$column} = :{$column}";
-        $statement = $this->db->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
         $statement->bindParam(':' . $column, $value);
         $statement->execute();
 
@@ -59,7 +59,7 @@ class QueryBuilder
     public function delete($table, $parameters)
     {
         $sql = 'DELETE from '.$table.' WHERE id=:id';
-        $statement = $this->db->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
         $statement->bindParam(':id', $parameters['id'], \PDO::PARAM_INT);
         $statement->execute();
     }
@@ -67,7 +67,7 @@ class QueryBuilder
     public function find($table, $id)
     {
         $sql = 'select * from ' . $table . ' where id = :id';
-        $statement = $this->db->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
         $statement->execute(array(':id' => $id));
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
@@ -76,7 +76,7 @@ class QueryBuilder
     public function update($table, $parameters)
     {
         $sql = 'UPDATE '.$table.' SET '.$this->createQuery($parameters).' WHERE id=:id';
-        $statement = $this->db->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
 
         unset($parameters['reg_date']);
         return $statement->execute($parameters);
@@ -99,7 +99,7 @@ class QueryBuilder
     public function all($table)
     {
         $sql = "SELECT * from {$table}";
-        $statemenet = $this->db->prepare($sql);
+        $statemenet = $this->pdo->prepare($sql);
         $statemenet->execute();
 
         return $statemenet->fetch(\PDO::FETCH_ASSOC);

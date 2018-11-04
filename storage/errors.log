@@ -424,4 +424,43 @@ Stack trace:
 #8 /var/www/framework/app/App.php(28): Router->direct()
 #9 /var/www/framework/core/bootstrap.php(7): App\App->run()
 #10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#11 {main}App\Exceptions\TokenMissmatchException: Token missmatch in /var/www/framework/app/middleware/VerifyToken.php:27
+Stack trace:
+#0 /var/www/framework/app/middleware/Middleware.php(34): App\middleware\VerifyToken->handle()
+#1 /var/www/framework/app/middleware/Middleware.php(27): App\middleware\Middleware->beforeMiddleware()
+#2 /var/www/framework/app/Facades/Facade.php(20): App\middleware\Middleware->before(Object(App\controllers\LoginController), 'login')
+#3 /var/www/framework/app/controllers/ControllerDispatcher.php(12): App\Facades\Facade::__callStatic('before', Array)
+#4 /var/www/framework/core/routing/Route.php(55): App\controllers\ControllerDispatcher->dispatch(Object(App\controllers\LoginController), 'login')
+#5 /var/www/framework/core/routing/Route.php(50): Route->dispatchController()
+#6 /var/www/framework/core/routing/Route.php(29): Route->runController()
+#7 /var/www/framework/core/routing/Router.php(36): Route->run()
+#8 /var/www/framework/app/App.php(30): Router->direct()
+#9 /var/www/framework/core/bootstrap.php(6): App\App->run()
+#10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#11 {main}App\Exceptions\TokenMissmatchException: Token missmatch in /var/www/framework/app/middleware/VerifyToken.php:27
+Stack trace:
+#0 /var/www/framework/app/middleware/Middleware.php(34): App\middleware\VerifyToken->handle()
+#1 /var/www/framework/app/middleware/Middleware.php(27): App\middleware\Middleware->beforeMiddleware()
+#2 /var/www/framework/app/Facades/Facade.php(20): App\middleware\Middleware->before(Object(App\controllers\LoginController), 'login')
+#3 /var/www/framework/app/controllers/ControllerDispatcher.php(12): App\Facades\Facade::__callStatic('before', Array)
+#4 /var/www/framework/core/routing/Route.php(55): App\controllers\ControllerDispatcher->dispatch(Object(App\controllers\LoginController), 'login')
+#5 /var/www/framework/core/routing/Route.php(50): Route->dispatchController()
+#6 /var/www/framework/core/routing/Route.php(29): Route->runController()
+#7 /var/www/framework/core/routing/Router.php(36): Route->run()
+#8 /var/www/framework/app/App.php(30): Router->direct()
+#9 /var/www/framework/core/bootstrap.php(6): App\App->run()
+#10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
+#11 {main}App\Exceptions\TokenMissmatchException: Token missmatch in /var/www/framework/app/middleware/VerifyToken.php:27
+Stack trace:
+#0 /var/www/framework/app/middleware/Middleware.php(34): App\middleware\VerifyToken->handle()
+#1 /var/www/framework/app/middleware/Middleware.php(27): App\middleware\Middleware->beforeMiddleware()
+#2 /var/www/framework/app/Facades/Facade.php(20): App\middleware\Middleware->before(Object(App\controllers\RegisterController), 'create')
+#3 /var/www/framework/app/controllers/ControllerDispatcher.php(12): App\Facades\Facade::__callStatic('before', Array)
+#4 /var/www/framework/core/routing/Route.php(55): App\controllers\ControllerDispatcher->dispatch(Object(App\controllers\RegisterController), 'create')
+#5 /var/www/framework/core/routing/Route.php(50): Route->dispatchController()
+#6 /var/www/framework/core/routing/Route.php(29): Route->runController()
+#7 /var/www/framework/core/routing/Router.php(36): Route->run()
+#8 /var/www/framework/app/App.php(30): Router->direct()
+#9 /var/www/framework/core/bootstrap.php(6): App\App->run()
+#10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
 #11 {main}

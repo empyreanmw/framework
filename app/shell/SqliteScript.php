@@ -1,20 +1,23 @@
 <?php
 
-
 namespace App\shell;
 
-
 use App\contracts\ShellScriptInterface;
+use App\traits\ConnectionInfo;
 
 class SqliteScript implements ShellScriptInterface
 {
-    public function execute($file)
+    use ConnectionInfo;
+
+    public function execute($file, $connection)
     {
-        shell_exec($this->buildCommand() . ' < ' . $file);
+        shell_exec($this->buildCommand($connection) . ' < ' . $file);
     }
 
-    protected function buildCommand()
+    protected function buildCommand($connection)
     {
-        return 'sqlite3 /var/www/framework/storage/test.db';
+        $this->getConnectionInfo($connection);
+
+        return 'sqlite3 '.$this->connectionInfo['path'];
     }
 }

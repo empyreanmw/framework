@@ -1,1 +1,1 @@
-create table users (id INTEGER primary key AUTOINCREMENT ,username varchar(60) ,password varchar(60) ,email varchar(60) default "test" );
+create table users (id INTEGER primary key generated always as identity ,username varchar(60) ,password varchar(60) ,email varchar(60) default 'test' );

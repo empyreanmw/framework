@@ -2,29 +2,23 @@
 
 namespace core\database;
 
-use App\traits\Singleton;
-
 class Connection
 {
-    use Singleton;
+    protected $name;
 
-    protected static $driver;
-    protected static $connection;
-
-    public static function make()
+    public function __construct($name = null)
     {
-        self::$driver = (new ConnectionFactory())->build();
-
-        self::$connection = (self::$driver)->connect();
+        $this->name = $name;
     }
 
-    public function getDriver()
+    public function make()
     {
-        return self::$driver;
+        return (new ConnectionFactory($this))->build();
     }
 
-    public function getConnection()
+    public function getConnectionName()
     {
-        return self::$connection;
+        return $this->name;
     }
+
 }

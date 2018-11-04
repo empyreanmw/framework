@@ -26,7 +26,6 @@ class App extends Container
     public function run()
     {
         $this->setMode()
-             ->makeConnection()
              ->make('router')
              ->direct();
     }
@@ -36,13 +35,6 @@ class App extends Container
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
-
-        return $this;
-    }
-
-    protected function makeConnection()
-    {
-        Connection::make();
 
         return $this;
     }

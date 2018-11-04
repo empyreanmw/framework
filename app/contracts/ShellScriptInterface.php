@@ -6,5 +6,5 @@ namespace App\contracts;
 
 interface ShellScriptInterface
 {
-    public function execute($file);
+    public function execute($file, $connection);
 }

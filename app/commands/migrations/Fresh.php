@@ -7,6 +7,7 @@ use core\database\Connection;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use core\database\drivers\DriverFactory;
 
 class Fresh extends Command
 {
@@ -19,10 +20,13 @@ class Fresh extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        Connection::instance()->getDriver()->executeSQL('/var/www/framework/core/database/scripts/drop_all_tables');
+        $driver = (new DriverFactory((new Connection())->make()))
+            ->build();
+
+       $driver->executeSQL('/var/www/framework/core/database/scripts/drop_all_tables');
 
         Migrations::execute();
 
-        Connection::instance()->getDriver()->executeSQL('/var/www/framework/core/database/scripts/sql');
+        $driver->executeSQL('/var/www/framework/core/database/scripts/sql');
     }
 }

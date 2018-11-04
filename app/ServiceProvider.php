@@ -17,6 +17,9 @@ class ServiceProvider
 
     public function boot()
     {
+        View::share('test', function() {
+          return  2+2;
+        });
         View::share('errors', SessionReader::get(['ValidationErrors']));
     }
 }

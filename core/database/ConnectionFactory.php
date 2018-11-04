@@ -3,23 +3,24 @@
 namespace core\database;
 
 use App\Config;
+use App\traits\ConnectionInfo;
 
 class ConnectionFactory
 {
-    protected $drivers;
-    protected $connection;
+    use ConnectionInfo;
 
-    public function __construct()
+    protected $drivers = [];
+    protected $connection;
+    protected $default;
+
+    public function __construct(Connection $connection)
     {
-        $this->connection = config('Connection');
-        $this->drivers = Config::grab('database')->get('drivers.'.$this->connection);
+        $this->getConnectionInfo($connection);
+        $this->drivers = Config::grab('database')->get('drivers');
     }
 
     public function build()
     {
-        return new $this->drivers;
+        return (new $this->drivers[$this->connectionInfo['driver']])->connect($this->connectionInfo);
     }
-
-
-
 }
