@@ -3,8 +3,9 @@
 
 namespace core\database\drivers;
 
+use App\contracts\ConnectionDriverInterface;
 
-class PostgresConnection
+class PostgresConnection implements ConnectionDriverInterface
 {
     public function connect($connectionInfo)
     {

@@ -8,6 +8,6 @@ class Migrations extends Facade
 {
     public static function getFacadeAccessor()
     {
-        return 'core\database\Migrations';
+        return 'core\database\MigrationExecutor';
     }
 }

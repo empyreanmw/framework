@@ -1,14 +1,11 @@
 <?php
 
-namespace core\database\drivers;
+namespace App\shell;
 
 use App\Facades\ShellCommands;
-use App\shell\MySQLScript;
-use App\shell\SqliteScript;
-use App\shell\PostgresScript;
 use core\database\Connection;
 
-class DriverFactory
+class DriverConsoleScriptFactory
 {
     protected $drivers = [
         'mysql' => MySQLScript::class,

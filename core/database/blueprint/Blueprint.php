@@ -1,10 +1,8 @@
 <?php
 
+namespace core\database\blueprint;
 
-namespace core\database;
-
-
-class Blueprint
+abstract class Blueprint
 {
     public $attributes = [];
     public $table;
@@ -38,13 +36,6 @@ class Blueprint
     public function default($value)
     {
         $this->addOptionToAttribute("default '".$value. "'");
-
-        return $this;
-    }
-
-    public function increment()
-    {
-        $this->addOptionToAttribute('generated always as identity');
 
         return $this;
     }

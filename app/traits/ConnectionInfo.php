@@ -3,6 +3,7 @@
 
 namespace App\traits;
 use App\Config;
+use App\Exceptions\NonexistentConnectionException;
 
 trait ConnectionInfo
 {
@@ -18,6 +19,11 @@ trait ConnectionInfo
 
         else{
             $this->connectionInfo = Config::grab('database')->get('connections.'.$connection->getConnectionName());
+
+            if (!$this->connectionInfo) {
+                throw new NonexistentConnectionException();
+                exit();
+            }
         }
     }
 }

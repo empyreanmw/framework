@@ -11,17 +11,12 @@ class SQLiteConnection implements ConnectionDriverInterface
 {
     protected $pdo;
 
-    public function connect()
+    public function connect($connectionInfo)
     {
         if ($this->pdo == null) {
-            $this->pdo = new \PDO("sqlite:" . Config::grab('database')->get('connections.sqlite.path'));
+            $this->pdo = new \PDO("sqlite:" . $connectionInfo['path']);
         }
 
         return $this->pdo;
     }
-    public function executeSQL($file)
-    {
-        ShellCommands::execute(new SqliteScript(), $file);
-    }
-
 }

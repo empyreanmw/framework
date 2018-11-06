@@ -1,22 +1,15 @@
 <?php
 namespace core\database\migrations;
 
-use core\database\Blueprint;
 use App\Facades\SQLBuilder;
+use core\database\Migration;
 
-class create_user_table
+class create_user_table extends Migration
 {
-    protected $blueprint;
-    /**
-     * create_user_table constructor.
-     */
-    public function __construct(Blueprint $blueprint)
+    public function up($connection)
     {
-        $this->blueprint = $blueprint;
-    }
+        $this->blueprintSetUp($connection);
 
-    public function up()
-    {
         $this->blueprint->table('users');
         $this->blueprint->integer('id')->primary()->increment();
         $this->blueprint->string('username');

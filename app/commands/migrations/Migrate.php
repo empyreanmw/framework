@@ -6,7 +6,7 @@ namespace App\commands\migrations;
 use App\Facades\Migrations;
 use App\ShellCommands;
 use core\database\Connection;
-use core\database\drivers\DriverFactory;
+use App\shell\DriverConsoleScriptFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,8 +24,10 @@ class Migrate extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        Migrations::execute();
-        (new DriverFactory(new Connection($input->getArgument('connection')), '/var/www/framework/core/database/scripts/sql'))
+        $connection = new Connection($input->getArgument('connection'));
+
+        Migrations::execute($connection);
+        (new DriverConsoleScriptFactory($connection, '/var/www/framework/core/database/scripts/sql'))
         ->build();
     }
 }

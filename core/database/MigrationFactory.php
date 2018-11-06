@@ -1,8 +1,6 @@
 <?php
 
-
 namespace core\database;
-
 
 use Symfony\Component\Finder\Finder;
 
@@ -20,13 +18,13 @@ class MigrationFactory
         $this->findMigrations();
     }
 
-    public function build()
+    public function build($connection)
     {
         foreach ($this->migrations as $migration) {
             $migration = trim($migration, '.php');
             $migration = 'core\\database\\migrations\\'.$migration;
 
-            app()->make($migration)->up();
+            app()->make($migration)->up($connection);
         }
     }
 

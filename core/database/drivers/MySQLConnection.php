@@ -7,7 +7,7 @@ use App\contracts\ConnectionDriverInterface;
 use App\shell\MySQLScript;
 use App\Facades\ShellCommands;
 
-class MySQLConnection
+class MySQLConnection implements ConnectionDriverInterface
 {
     public function connect($connectionInfo)
     {

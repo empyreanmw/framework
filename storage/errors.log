@@ -463,4 +463,45 @@ Stack trace:
 #8 /var/www/framework/app/App.php(30): Router->direct()
 #9 /var/www/framework/core/bootstrap.php(6): App\App->run()
 #10 /var/www/framework/index.php(6): require_once('/var/www/framew...')
-#11 {main}
+#11 {main}App\Exceptions\NonexistentConnectionException: Provided connection name does not exist. in /var/www/framework/app/traits/ConnectionInfo.php:24
+Stack trace:
+#0 /var/www/framework/core/database/blueprint/BlueprintFactory.php(20): core\database\blueprint\BlueprintFactory->getConnectionInfo(Object(core\database\Connection))
+#1 /var/www/framework/core/database/Migration.php(13): core\database\blueprint\BlueprintFactory->build(Object(core\database\Connection))
+#2 /var/www/framework/core/database/migrations/create_user_table.php(11): core\database\Migration->blueprintSetUp(Object(core\database\Connection))
+#3 /var/www/framework/core/database/MigrationFactory.php(29): core\database\migrations\create_user_table->up(Object(core\database\Connection))
+#4 /var/www/framework/app/Facades/Facade.php(20): core\database\MigrationFactory->build(Object(core\database\Connection))
+#5 /var/www/framework/core/database/MigrationExecutor.php(14): App\Facades\Facade::__callStatic('build', Array)
+#6 /var/www/framework/app/Facades/Facade.php(20): core\database\MigrationExecutor->Execute(Object(core\database\Connection))
+#7 /var/www/framework/app/commands/migrations/Migrate.php(29): App\Facades\Facade::__callStatic('execute', Array)
+#8 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\migrations\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\migrations\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /var/www/framework/framework(13): Symfony\Component\Console\Application->run()
+#13 {main}App\Exceptions\NonexistentConnectionException: Provided connection name does not exist. in /var/www/framework/app/traits/ConnectionInfo.php:24
+Stack trace:
+#0 /var/www/framework/core/database/blueprint/BlueprintFactory.php(20): core\database\blueprint\BlueprintFactory->getConnectionInfo(Object(core\database\Connection))
+#1 /var/www/framework/core/database/Migration.php(13): core\database\blueprint\BlueprintFactory->build(Object(core\database\Connection))
+#2 /var/www/framework/core/database/migrations/create_user_table.php(11): core\database\Migration->blueprintSetUp(Object(core\database\Connection))
+#3 /var/www/framework/core/database/MigrationFactory.php(29): core\database\migrations\create_user_table->up(Object(core\database\Connection))
+#4 /var/www/framework/app/Facades/Facade.php(20): core\database\MigrationFactory->build(Object(core\database\Connection))
+#5 /var/www/framework/core/database/MigrationExecutor.php(14): App\Facades\Facade::__callStatic('build', Array)
+#6 /var/www/framework/app/Facades/Facade.php(20): core\database\MigrationExecutor->Execute(Object(core\database\Connection))
+#7 /var/www/framework/app/commands/migrations/Migrate.php(29): App\Facades\Facade::__callStatic('execute', Array)
+#8 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\migrations\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\migrations\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /var/www/framework/framework(13): Symfony\Component\Console\Application->run()
+#13 {main}App\Exceptions\NonexistentConnectionException: Provided connection name does not exist. in /var/www/framework/app/traits/ConnectionInfo.php:24
+Stack trace:
+#0 /var/www/framework/core/database/ConnectionFactory.php(18): core\database\ConnectionFactory->getConnectionInfo(Object(core\database\Connection))
+#1 /var/www/framework/core/database/Connection.php(16): core\database\ConnectionFactory->__construct(Object(core\database\Connection))
+#2 /var/www/framework/app/shell/DriverConsoleScriptFactory.php(24): core\database\Connection->make()
+#3 /var/www/framework/app/commands/migrations/Fresh.php(27): App\shell\DriverConsoleScriptFactory->__construct(Object(core\database\Connection), '/var/www/framew...')
+#4 /var/www/framework/vendor/symfony/console/Command/Command.php(251): App\commands\migrations\Fresh->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/framework/vendor/symfony/console/Application.php(886): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/framework/vendor/symfony/console/Application.php(262): Symfony\Component\Console\Application->doRunCommand(Object(App\commands\migrations\Fresh), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/framework/vendor/symfony/console/Application.php(145): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/framework/framework(13): Symfony\Component\Console\Application->run()
+#9 {main}

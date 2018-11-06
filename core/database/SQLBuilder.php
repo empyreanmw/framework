@@ -3,13 +3,15 @@
 
 namespace core\database;
 
+use App\contracts\BlueprintInterface;
 use App\Facades\File;
 use App\Facades\QueryBuilder;
+
 class SQLBuilder
 {
     protected $sql;
 
-    public function create(Blueprint $blueprint)
+    public function create(BlueprintInterface $blueprint)
     {
         foreach ($blueprint->attributes as $attribute) {
             foreach ($attribute as $attr) {

@@ -21,6 +21,7 @@ class ConnectionFactory
 
     public function build()
     {
-        return (new $this->drivers[$this->connectionInfo['driver']])->connect($this->connectionInfo);
+        return (new $this->drivers[$this->connectionInfo['driver']])
+            ->connect($this->connectionInfo);
     }
 }
